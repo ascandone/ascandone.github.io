@@ -1,0 +1,133 @@
+import React, { FC } from 'react'
+import Layout from '../components/layout'
+import { Instagram, Linkedin, GitHub } from 'react-feather'
+import Link from '../components/link'
+
+const Section: FC<{ head: string }> = ({ head, children }) => (
+  <article>
+    <h2 className="text-black font-bold mb-2">{head}</h2>
+    <div className="text-gray-600">{children}</div>
+  </article>
+)
+
+const categories = [
+  {
+    label: 'ui frameworks',
+    children: ['react', 'elm', 'flutter', 'lit-element'],
+  },
+  {
+    label: 'css',
+    children: ['tailwind', 'sass'],
+  },
+  {
+    label: 'design',
+    children: ['framer', 'adobe xd'],
+  },
+  {
+    label: 'langs',
+    children: ['typescript', 'reasonml', 'haskell', 'clojure'],
+  },
+  {
+    label: 'build tools',
+    children: ['gatsby', 'parcel', 'snowpack'],
+  },
+  {
+    label: 'state management',
+    children: ['redux'],
+  },
+  {
+    label: 'coding style',
+    children: ['prettier'],
+  },
+]
+
+const Keyword: FC = ({ children }) => (
+  <span className="text-darkest-gray -mx-1 px-1 gradient-bg">{children}</span>
+)
+
+const Header: FC = () => (
+  <div className="py-16 left-0 flex justify-center items-center relative md:h-screen">
+    <div className="max-w-md px-5 md:fixed top-0 md:top-auto">
+      <h1 className="text-5xl font-extrabold text-white leading-snug font-serif">
+        Hi, I'm Alessandro. <br />I <Keyword>design</Keyword> and{' '}
+        <Keyword>build</Keyword>* things.
+      </h1>
+
+      <p className="mt-6 text-sm text-gray-200 font-light">
+        *Also, I usually break them
+      </p>
+    </div>
+  </div>
+)
+
+const Index: FC = () => (
+  <Layout header={<Header />}>
+    <main className="max-w-md mx-auto space-y-10 leading-relaxed">
+      <Section head="About">
+        <div className="space-y-3">
+          <p>
+            I'm a 23 years-old computer science student at Sapienza university
+            in Rome. I like <Link to="#">music</Link>, cats, typography, web
+            design, and (duh) computer science. I'm particularly interested in
+            algorithms study, language theory and functional paradigm.
+          </p>
+          <p>
+            My main focus is to build <b>clean</b> yet <b>accessible</b> user
+            experiences with great focus on details.
+            <br />
+            The use of expressive and powerful type systems allows me to build{' '}
+            <b>reliable</b> apps with no runtime errors in practice, and gives
+            me the confidence to <b>quickly iterate</b> cycles of refactoring.
+          </p>
+        </div>
+      </Section>
+      <Section head="Selected tools and technologies">
+        {categories
+          .map(({ label, children }) => (
+            <span className="whitespace-no-wrap">
+              <span className="text-gray-400 font-light">{label}</span>{' '}
+              <span className="whitespace-normal">{children.join(', ')}</span>
+            </span>
+          ))
+          .reduce((acc, x) => (
+            <>
+              {acc} • {x}
+            </>
+          ))}
+      </Section>
+      <Section head="Projects">
+        <ul>
+          <li>
+            <Link to="/project">studiodentisticoandreinafraioli.it</Link>
+          </li>
+          <li>
+            <Link to="/">Instagram redesign</Link>
+          </li>
+          <li>
+            <Link to="#">elm-memory</Link>
+          </li>
+          <li>
+            <Link to="#">lit-hooks</Link>
+          </li>
+        </ul>
+      </Section>
+      <Section head="Contact">
+        <ul>
+          <li>Alessandro Scandone</li>
+          <li>
+            <Link to="#">alescandone@gmail.com</Link>
+          </li>
+          <li className="space-x-3 flex items-center">
+            <Linkedin className="h-5" />
+            <GitHub className="h-5" />
+            <Instagram className="h-5" />
+            {/* HACK  */}
+            <span className="text-transparent">.</span>
+          </li>
+        </ul>
+      </Section>
+    </main>
+  </Layout>
+)
+
+export default Index

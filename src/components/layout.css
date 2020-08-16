@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+
+@tailwind components;
+
+.gradient-text {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-bg,
+.gradient-bg-dark {
+  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+  /* background: linear-gradient(45deg, #bf125d, #e74694, #ff5a1f); */
+  /* background: #f05252; */
+  animation-name: gradient;
+  background-size: 300% 90%;
+  background-position-y: 50%;
+  background-repeat: no-repeat;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+.gradient-bg-static {
+  background-image: linear-gradient(
+    45deg,
+    theme('colors.pink.700'),
+    theme('colors.orange.500')
+  );
+}
+
+.gradient-bg {
+  background-image: linear-gradient(
+    45deg,
+    theme('colors.pink.700'),
+    theme('colors.pink.500'),
+    theme('colors.orange.500')
+  );
+}
+
+.gradient-bg-dark {
+  background-image: linear-gradient(
+    45deg,
+    theme('colors.pink.500'),
+    theme('colors.orange.500')
+  );
+}
+
+.gradient-bg:nth-of-type(1) {
+  animation-duration: 18s;
+}
+.gradient-bg:nth-of-type(2) {
+  animation-duration: 12s;
+}
+
+@keyframes gradient {
+  0% {
+    background-position-x: 35%;
+  }
+  50% {
+    background-position-x: 100%;
+  }
+  100% {
+    background-position-x: 35%;
+  }
+}
+
+.underline-gradient-dark {
+  /* #fad1e8 */
+  background-position: 0.1em 88%;
+  --color: theme('colors.cool-gray.600');
+  background-image: linear-gradient(
+    120deg,
+    var(--color) 100%,
+    var(--color) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 25%;
+}
+
+.underline-gradient {
+  /* #fad1e8 */
+  background-position: 0.1em 88%;
+  --color: theme('colors.cool-gray.200');
+  background-image: linear-gradient(
+    120deg,
+    var(--color) 100%,
+    var(--color) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 25%;
+}
+
+.underline-gradient:hover {
+  @apply text-gray-900;
+  background-size: 100% 50%;
+}
+
+.underline-gradient-thin {
+  background-position: 0 100%;
+  background-image: linear-gradient(120deg, #d53f8c 100%, #d53f8c 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+}
+
+b {
+  @apply text-gray-800;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@tailwind utilities;
