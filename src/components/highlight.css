@@ -1,0 +1,52 @@
+html {
+  --name: #fff;
+}
+
+.token.plain {
+  @apply inline-block;
+}
+
+.keyword,
+.token.tag {
+  font-weight: bold;
+  color: white;
+}
+
+.token.operator,
+.token.punctuation,
+.token.string,
+.token.number,
+.token.builtin,
+.token.variable {
+  color: theme('colors.gray.400');
+}
+
+.token.comment {
+  color: theme('colors.gray.500');
+}
+
+.token.tag.punctuation {
+  color: theme('colors.gray.500') !important;
+}
+
+.token.class-name,
+.token.function,
+.token.tag.attr-value,
+.token.tag.attr-name,
+/* .token.tag, */
+.token.attr-name {
+  color: theme('colors.gray.100');
+  font-weight: normal;
+}
+
+/*
+code {
+  font-family: 'Fira Code', monospace;
+}
+
+@supports (font-variation-settings: normal) {
+  pre,
+  code {
+    font-family: 'Fira Code VF', monospace;
+  }
+} */

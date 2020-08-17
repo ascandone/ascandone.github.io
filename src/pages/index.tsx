@@ -1,11 +1,30 @@
 import React, { FC } from 'react'
 import Layout from '../components/layout'
-import { Instagram, Linkedin, GitHub } from 'react-feather'
+import {
+  Instagram,
+  Linkedin,
+  GitHub,
+  ChevronRight,
+  ArrowUpRight,
+} from 'react-feather'
 import Link from '../components/link'
 
-const Section: FC<{ head: string }> = ({ head, children }) => (
+const Section: FC<{ head: string; href?: string }> = ({
+  head,
+  href,
+  children,
+}) => (
   <article>
-    <h2 className="text-black font-bold mb-2">{head}</h2>
+    <h2 className="text-black font-bold mb-2">
+      {href == null ? (
+        head
+      ) : (
+        <div className="flex items-end">
+          <Link to={href}>{head}</Link>
+          <ArrowUpRight className="h-5" />
+        </div>
+      )}
+    </h2>
     <div className="text-gray-600">{children}</div>
   </article>
 )
@@ -46,18 +65,16 @@ const Keyword: FC = ({ children }) => (
 )
 
 const Header: FC = () => (
-  <div className="py-16 left-0 flex justify-center items-center relative md:h-screen">
-    <div className="max-w-md px-5 md:fixed top-0 md:top-auto">
-      <h1 className="text-5xl font-extrabold text-white leading-snug font-serif">
-        Hi, I'm Alessandro. <br />I <Keyword>design</Keyword> and{' '}
-        <Keyword>build</Keyword>* things.
-      </h1>
+  <>
+    <h1 className="text-5xl font-extrabold text-white leading-snug font-serif">
+      Hi, I'm Alessandro. <br />I <Keyword>design</Keyword> and{' '}
+      <Keyword>build</Keyword>* things.
+    </h1>
 
-      <p className="mt-6 text-sm text-gray-200 font-light">
-        *Also, I usually break them
-      </p>
-    </div>
-  </div>
+    <p className="mt-6 text-sm text-gray-200 font-light">
+      *Also, I usually break them
+    </p>
+  </>
 )
 
 const Index: FC = () => (
@@ -81,6 +98,16 @@ const Index: FC = () => (
           </p>
         </div>
       </Section>
+      <Section head="Blog" href="#">
+        <ul>
+          <li>
+            <Link to="/project">Learn React.js in 15 minutes</Link>
+          </li>
+          <li>
+            <Link to="/">Lambda calculus and why you might need it</Link>
+          </li>
+        </ul>
+      </Section>
       <Section head="Selected tools and technologies">
         {categories
           .map(({ label, children }) => (
@@ -101,6 +128,9 @@ const Index: FC = () => (
             <Link to="/project">studiodentisticoandreinafraioli.it</Link>
           </li>
           <li>
+            <span className="text-gray-400 font-semibold">more soon...</span>
+          </li>
+          {/* <li>
             <Link to="/">Instagram redesign</Link>
           </li>
           <li>
@@ -108,7 +138,7 @@ const Index: FC = () => (
           </li>
           <li>
             <Link to="#">lit-hooks</Link>
-          </li>
+          </li> */}
         </ul>
       </Section>
       <Section head="Contact">

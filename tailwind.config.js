@@ -4,14 +4,13 @@ const colors = require('@tailwindcss/ui/colors')
 
 module.exports = {
   purge: {
-    mode: 'all',
-    content: ['src/**/*.html', 'src/**/*.jsx', 'src/**/*.js', 'src/**/*.tsx'],
+    content: ['src/**/*.jsx', 'src/**/*.js', 'src/**/*.tsx'],
   },
   theme: {
     fontFamily: {
       sans: ['Nunito', ...defaultTheme.fontFamily.sans],
-      serif: ['Eb Garamond', ...defaultTheme.fontFamily.serif],
-      // Vollkorn
+      serif: ['Eb Garamond', ...defaultTheme.fontFamily.serif], // Vollkorn
+      mono: ['Roboto mono', ...defaultTheme.fontFamily.mono],
     },
     colors: {
       ...colors,
@@ -20,5 +19,7 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'), //
+  ],
 }
