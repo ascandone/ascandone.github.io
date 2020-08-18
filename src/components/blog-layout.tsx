@@ -11,7 +11,7 @@ import './highlight.css'
 require('prismjs/components/prism-elm.js')
 require('prismjs/components/prism-clojure.js')
 
-const mb = ' mb-6 '
+const mb = ' mb-10 '
 
 const p: FC = (p) => <p {...p} className={mb} />
 const hr: FC = () => <hr className="my-5" />
@@ -19,15 +19,26 @@ const hr: FC = () => <hr className="my-5" />
 const blockquote: FC = (p) => (
   <blockquote
     {...p}
-    className={'border-l-2 border-gray-300 rounded-l-sm pl-4' + mb}
+    className={
+      'border-l-2 border-gray-300 rounded-l-sm pl-4 text-gray-700 italic ' + mb
+    }
   />
 )
 
-const ul: FC = (p) => <ul {...p} className={'list-disc ml-4 space-y-1' + mb} />
+const ul: FC = (p) => (
+  <ul {...p} className={'list-disc ml-4 space-y-1' + mb} />
+)
 
 const ol: FC = (p) => (
   <ol {...p} className={'list-decimal ml-4 space-y-1' + mb} />
 )
+
+// const li: FC = ({ children }) => (
+//   <li className="">
+//     <span className="_rounded-full h-3 w-3 mr-4 gradient-bg-static inline-block"></span>
+//     {children}
+//   </li>
+// )
 
 const li: FC = (p) => <li {...p} className="pl-3" />
 
@@ -42,7 +53,8 @@ const code: FC<{ className?: string }> = (p) => (
       <pre
         className={
           className +
-          ' bg-darkest-gray text-gray-100 overflow-x-auto text-sm -mx-5 px-5 lg:rounded  py-2 mb-6'
+          ' bg-darkest-gray text-gray-100 overflow-x-auto text-sm -mx-5 px-5 lg:rounded  py-2 ' +
+          mb
         }
       >
         {/* HACK */}
@@ -61,21 +73,18 @@ const code: FC<{ className?: string }> = (p) => (
 )
 
 // TODO: more semantic (not figure)
-const img: FC<{ src: string; alt?: string }> = ({ src, alt }) => {
-  console.log(src)
-  return (
-    <span className="my-6 -mx-5 sm:mx-auto block">
-      <img className="md:rounded" src={src} alt={alt} />
-      <span className="px-4 sm:px-0">
-        <span className="pt-2 text-black font-bold text-sm">{alt}</span>
-      </span>
+const img: FC<{ src: string; alt?: string }> = ({ src, alt }) => (
+  <span className="my-6 -mx-5 sm:mx-auto block">
+    <img className="md:rounded" src={src} alt={alt} />
+    <span className="px-4 sm:px-0">
+      <span className="pt-2 text-black font-bold text-sm">{alt}</span>
     </span>
-  )
-}
+  </span>
+)
 
 // TODO: rest
 
-const hm = ' mb-8 mt-6 '
+const hm = ' mb-10 mt-16 '
 
 const h1: FC = (p) => (
   <h2 {...p} className={'text-black leading-snug text-4xl font-light' + hm} />
@@ -110,6 +119,10 @@ const a: FC<{ href?: string }> = ({ href = '', children }) => (
   </span>
 )
 
+const inlineCode: FC = (p) => (
+  <code className="bg-cool-gray-100 rounded px-px -mx-px" {...p} />
+)
+
 const components = {
   p,
   blockquote,
@@ -126,6 +139,7 @@ const components = {
   h6,
   a,
   hr,
+  inlineCode,
 }
 
 // TODO: type safe serializer
@@ -139,7 +153,8 @@ interface PostMetadata {
 const BlogLayout: FC<{ metadata: PostMetadata }> = ({ children, metadata }) => (
   <Layout header={<Header {...metadata} subhead="Blog" />}>
     {/* <article className="max-w-lg  _max-w-xl  _md:text-lg mx-auto text-base text-gray-800 leading-relaxed"> */}
-    <article className="max-w-xl lg:text-lg mx-auto text-base text-gray-800 leading-relaxed">
+    <article className="max-w-2xl text-lg mx-auto text-gray-800 leading-relaxed prose">
+      {/* <article className="max-w-md text-base mx-auto text-gray-800 leading-relaxed prose"> */}
       {/* {children} */}
       <MDXProvider components={components}>{children}</MDXProvider>
     </article>

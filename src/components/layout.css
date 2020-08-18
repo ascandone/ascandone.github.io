@@ -105,63 +105,26 @@ button {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 } */
 
-.gatsby-resp-image-wrapper,
-img:not(.gatsby-resp-image-image)  {
-  @apply my-6 -mx-5 block !important;
+/* Prose */
+
+.prose :first-child {
+  @apply mt-0;
+}
+
+/* .prose > * {
+  @apply max-w-lg;
+} */
+
+.prose .gatsby-resp-image-wrapper,
+.prose img:not(.gatsby-resp-image-image)  {
+  @apply mb-10 -mx-5 block !important;
   min-width: calc(100% + theme('spacing.5') * 2);
 }
 
 @screen lg {
-  img {
+  .prose img {
     @apply rounded;
   }
 }
 
-/* @screen sm {
-  .gatsby-resp-image-wrapper {
-    @apply mx-auto;
-  }
-} */
-
 @tailwind utilities;
-
-/* html {
-  --name: #fff;
-}
-
-.token.plain {
-  @apply inline-block;
-}
-
-.keyword,
-.token.tag {
-  font-weight: bold;
-  color: white;
-}
-
-.token.operator,
-.token.punctuation,
-.token.string,
-.token.number,
-.token.builtin,
-.token.variable {
-  color: theme('colors.gray.400');
-}
-
-.token.comment {
-  color: theme('colors.gray.500');
-}
-
-.token.tag.punctuation {
-  color: theme('colors.gray.500') !important;
-}
-
-.token.class-name,
-.token.function,
-.token.tag.attr-value,
-.token.tag.attr-name,
-
-.token.attr-name {
-  color: theme('colors.gray.100');
-  font-weight: normal;
-}

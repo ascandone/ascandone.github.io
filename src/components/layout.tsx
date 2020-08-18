@@ -20,7 +20,7 @@ const Layout: FC<LayoutProps> = ({ header, children }) => (
       </header>
 
       {/* right */}
-      <main className="min-w-0 rounded-t-lg md:rounded-none flex-1 py-10 bg-white _w-full md:flex min-h-screen">
+      <main className="min-w-0 rounded-t-lg md:rounded-none flex-1 py-10 bg-white md:flex min-h-screen">
         <div className="max-w-full px-5 lg:px-8 xl:px-16">{children}</div>
       </main>
     </div>

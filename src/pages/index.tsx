@@ -65,7 +65,7 @@ const Keyword: FC = ({ children }) => (
 )
 
 const Header: FC = () => (
-  <>
+  <div className="max-w-md mx-auto">
     <h1 className="text-5xl font-extrabold text-white leading-snug font-serif">
       Hi, I'm Alessandro. <br />I <Keyword>design</Keyword> and{' '}
       <Keyword>build</Keyword>* things.
@@ -74,7 +74,7 @@ const Header: FC = () => (
     <p className="mt-6 text-sm text-gray-200 font-light">
       *Also, I usually break them
     </p>
-  </>
+  </div>
 )
 
 const Index: FC = () => (
@@ -101,10 +101,12 @@ const Index: FC = () => (
       <Section head="Blog" href="#">
         <ul>
           <li>
-            <Link to="/project">Learn React.js in 15 minutes</Link>
+            <Link to="/blog/test/">Learn React.js in 15 minutes</Link>
           </li>
           <li>
-            <Link to="/">Lambda calculus and why you might need it</Link>
+            <Link to="/blog/test/">
+              Making impossible states impossible with typescript
+            </Link>
           </li>
         </ul>
       </Section>
@@ -125,7 +127,7 @@ const Index: FC = () => (
       <Section head="Projects">
         <ul>
           <li>
-            <Link to="/project">studiodentisticoandreinafraioli.it</Link>
+            <Link to="#">studiodentisticoandreinafraioli.it</Link>
           </li>
           <li>
             <span className="text-gray-400 font-semibold">more soon...</span>
