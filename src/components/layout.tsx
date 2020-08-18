@@ -10,6 +10,10 @@ const Layout: FC<LayoutProps> = ({ header, children }) => (
   <div className="bg-darkest-gray antialiased">
     <Helmet>
       <meta name="theme-color" content="#121212" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,400;1,700&display=swap"
+        rel="stylesheet"
+      ></link>
     </Helmet>
     <div className="flex flex-col md:flex-row">
       {/* left */}

@@ -25,6 +25,7 @@
     "gatsby": "^2.24.41",
     "gatsby-plugin-mdx": "^1.2.34",
     "gatsby-plugin-postcss": "^2.3.11",
+    "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-sharp": "^2.6.27",
     "gatsby-remark-images": "^3.3.25",
     "gatsby-source-filesystem": "^2.3.24",
