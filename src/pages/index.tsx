@@ -77,7 +77,7 @@ const Index: FC = () => (
             functional paradigm.
           </p>
           <p>
-            My main focus is to build <b>clean</b> yet <b>accessible</b> user
+            My main focus is to build <b>clean</b> yet <b>usable</b> user
             experiences with great focus on details.
             <br />
             The use of expressive and powerful type systems allows me to build{' '}
