@@ -54,7 +54,7 @@ const Header: FC<HeaderProps> = ({
         <div className="flex flex-wrap">
           {tags.map((tag, i) => (
             <div key={i} className="mr-4 mb-3">
-              <Chip>{tag}</Chip>
+              <Chip dark>{tag}</Chip>
             </div>
           ))}
         </div>

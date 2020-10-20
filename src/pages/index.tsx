@@ -1,13 +1,10 @@
 import React, { FC } from 'react'
 import Layout from '../components/layout'
-import {
-  Instagram,
-  Linkedin,
-  GitHub,
-  ChevronRight,
-  ArrowUpRight,
-} from 'react-feather'
-import Link from '../components/link'
+import Header from '../components/index-header'
+import { GitHub, ArrowUpRight } from 'react-feather'
+import { link } from '../common-styles'
+
+const targetBlank = { target: '_blank', rel: 'noopener noreferrer' }
 
 const Section: FC<{ head: string; href?: string }> = ({
   head,
@@ -20,7 +17,7 @@ const Section: FC<{ head: string; href?: string }> = ({
         head
       ) : (
         <div className="flex items-end">
-          <Link to={href}>{head}</Link>
+          {/* <Link to={href}>{head}</Link> */}
           <ArrowUpRight className="h-5" />
         </div>
       )}
@@ -60,33 +57,24 @@ const categories = [
   },
 ]
 
-const Keyword: FC = ({ children }) => (
-  <span className="text-darkest-gray -mx-1 px-1 gradient-bg">{children}</span>
-)
-
-const Header: FC = () => (
-  <div className="max-w-md mx-auto">
-    <h1 className="text-5xl font-extrabold text-white leading-snug font-serif">
-      Hi, I'm Alessandro. <br />I <Keyword>design</Keyword> and{' '}
-      <Keyword>build</Keyword>* things.
-    </h1>
-
-    <p className="mt-6 text-sm text-gray-200 font-light">
-      *Also, I usually break them
-    </p>
-  </div>
-)
-
 const Index: FC = () => (
   <Layout header={<Header />}>
     <main className="max-w-md mx-auto space-y-10 leading-relaxed">
       <Section head="About">
         <div className="space-y-3">
           <p>
-            I'm a 23 years-old computer science student at Sapienza university
-            in Rome. I like <Link to="#">music</Link>, cats, typography, web
-            design, and (duh) computer science. I'm particularly interested in
-            algorithms study, language theory and functional paradigm.
+            I'm a 24 years-old computer science student at Sapienza university
+            in Rome. I like{' '}
+            <a
+              className={link}
+              href="https://open.spotify.com/user/alescandone?si=MIUONN0PQX-oCnh_GgoT4A"
+              {...targetBlank}
+            >
+              music
+            </a>
+            , cats, typography, web design, and (duh) computer science. I'm
+            particularly interested in algorithms study, language theory and
+            functional paradigm.
           </p>
           <p>
             My main focus is to build <b>clean</b> yet <b>accessible</b> user
@@ -98,7 +86,7 @@ const Index: FC = () => (
           </p>
         </div>
       </Section>
-      <Section head="Blog" href="#">
+      {/* <Section head="Blog" href="#">
         <ul>
           <li>
             <Link to="/blog/test/">Learn React.js in 15 minutes</Link>
@@ -109,7 +97,7 @@ const Index: FC = () => (
             </Link>
           </li>
         </ul>
-      </Section>
+      </Section> */}
       <Section head="Selected tools and technologies">
         {categories
           .map(({ label, children }) => (
@@ -127,34 +115,48 @@ const Index: FC = () => (
       <Section head="Projects">
         <ul>
           <li>
-            <Link to="#">studiodentisticoandreinafraioli.it</Link>
+            <a
+              className={link}
+              href="https://studiodentisticoandreinafraioli.it"
+              {...targetBlank}
+            >
+              studiodentisticoandreinafraioli.it
+            </a>
           </li>
           <li>
-            <span className="text-gray-400 font-semibold">more soon...</span>
-          </li>
-          {/* <li>
-            <Link to="/">Instagram redesign</Link>
+            <a
+              className={link}
+              href="https://lambda-calculus-interpreter.netlify.app"
+              {...targetBlank}
+            >
+              online λ-calculus interpreter
+            </a>
           </li>
           <li>
-            <Link to="#">elm-memory</Link>
+            <span className="text-gray-400 font-semibold">
+              more coming soon...
+            </span>
           </li>
-          <li>
-            <Link to="#">lit-hooks</Link>
-          </li> */}
         </ul>
       </Section>
       <Section head="Contact">
         <ul>
           <li>Alessandro Scandone</li>
           <li>
-            <Link to="#">alescandone@gmail.com</Link>
+            <a className={link} href="mailto:alescandone@gmail.com">
+              alescandone@gmail.com
+            </a>
           </li>
-          <li className="space-x-3 flex items-center">
-            <Linkedin className="h-5" />
-            <GitHub className="h-5" />
-            <Instagram className="h-5" />
+          <li className="space-x-3 flex items-center mt-1">
+            <a href="https://github.com/ascandone" {...targetBlank}>
+              <GitHub className="h-5" />
+            </a>
+
+            {/* <Linkedin className="h-5" />
+
+            <Instagram className="h-5" /> */}
             {/* HACK  */}
-            <span className="text-transparent">.</span>
+            {/* <span className="text-transparent">.</span> */}
           </li>
         </ul>
       </Section>

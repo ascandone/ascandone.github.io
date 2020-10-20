@@ -2,6 +2,16 @@ html {
   --name: #fff;
 }
 
+.gatsby-highlight {
+  @apply bg-darkest-gray text-gray-100 overflow-x-auto text-sm -mx-5 px-5 py-2 mb-10;
+}
+
+@screen lg {
+  .gatsby-highlight {
+    @apply rounded;
+  }
+}
+
 .token.plain {
   @apply inline-block;
 }

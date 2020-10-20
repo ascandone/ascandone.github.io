@@ -2,11 +2,20 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 const colors = require('@tailwindcss/ui/colors')
 
+const generateGradients = (step) =>
+  Object.fromEntries(
+    Array.from({ length: 360 / step }, (_, i) => i * step).map((n) => [
+      `gradient-${n}`,
+      `linear-gradient(${n}deg, var(--gradient-color-stops))`,
+    ]),
+  )
+
 module.exports = {
   purge: {
     content: ['src/**/*.jsx', 'src/**/*.js', 'src/**/*.tsx'],
   },
   theme: {
+    backgroundImage: generateGradients(15),
     fontFamily: {
       sans: ['Nunito', ...defaultTheme.fontFamily.sans],
       serif: ['Eb Garamond', ...defaultTheme.fontFamily.serif], // Vollkorn
@@ -19,7 +28,8 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [
-    // require('@tailwindcss/typography'), //
-  ],
+  plugins: [],
+  future: {
+    removeDeprecatedGapUtilities: true,
+  },
 }

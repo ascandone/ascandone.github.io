@@ -14,6 +14,7 @@ const Layout: FC<LayoutProps> = ({ header, children }) => (
         href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,400;1,700&display=swap"
         rel="stylesheet"
       ></link>
+      <title>Alessandro Scandone :: Dev</title>
     </Helmet>
     <div className="flex flex-col md:flex-row">
       {/* left */}
@@ -24,7 +25,7 @@ const Layout: FC<LayoutProps> = ({ header, children }) => (
       </header>
 
       {/* right */}
-      <main className="min-w-0 rounded-t-lg md:rounded-none flex-1 py-10 bg-white md:flex min-h-screen">
+      <main className="min-w-0 rounded-t-lg md:rounded-none flex-1 py-8 bg-white md:flex min-h-screen">
         <div className="max-w-full px-5 lg:px-8 xl:px-16">{children}</div>
       </main>
     </div>

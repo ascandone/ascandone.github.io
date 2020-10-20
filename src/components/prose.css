@@ -1,0 +1,80 @@
+/* Prose */
+
+.prose :first-child {
+  margin-top: 0;
+}
+
+@screen lg {
+  .prose img {
+		@apply rounded;
+  }
+}
+
+.prose .gatsby-resp-image-wrapper,
+.prose img:not(.gatsby-resp-image-image) {
+	@apply -mx-5 mb-10 block !important;
+  min-width: calc(100% + theme('spacing.5') * 2);
+}
+
+
+/* Typography */
+
+.prose p, .prose blockquote, .prose ul, .prose ol {
+	@apply mb-10;
+}
+
+.prose hr {
+	@apply my-5;
+}
+
+.prose ul, .prose ol {
+	@apply ml-4;
+}
+
+.prose ul {
+	@apply list-disc;
+}
+
+.prose ol {
+	@apply list-decimal;
+}
+
+.prose li {
+	@apply pl-3 mb-2;
+}
+
+.prose blockquote {
+	@apply border-l-2 border-gray-300 rounded-l-sm pl-4 text-gray-700 italic;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+	@apply mb-10 mt-16;
+}
+
+.prose h1 {
+	@apply text-black text-4xl font-semibold;
+}
+
+.prose h2 {
+	@apply text-black text-2xl font-bold;
+}
+
+.prose h3 {
+	@apply text-gray-900 text-xl font-bold mb-6 mt-12;
+}
+
+.prose h4 {
+	@apply text-gray-900 text-base font-bold mb-6 mt-10;
+}
+
+.prose h5 {
+	@apply text-black text-sm font-bold mb-6 mt-10;
+}
+
+.prose h6 {
+	@apply text-gray-700 text-xs uppercase tracking-wide font-bold mb-2 mt-8;
+}
+
+.prose a {
+	@apply transition-all duration-200;
+}
