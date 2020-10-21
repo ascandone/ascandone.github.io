@@ -12,7 +12,7 @@ const generateGradients = (step) =>
 
 module.exports = {
   purge: {
-    content: ['src/**/*.jsx', 'src/**/*.js', 'src/**/*.tsx'],
+    content: ['src/**/*.jsx', 'src/**/*.js', 'src/**/*.tsx', 'src/**/*.ts'],
   },
   theme: {
     backgroundImage: generateGradients(15),
