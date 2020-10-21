@@ -31,24 +31,18 @@ interface PageContext {
 
 const BlogLayout = ({
   pageContext: { frontmatter, html },
-}: PageProps<any, PageContext>) => {
-  console.log('MATTER', frontmatter)
-  return (
-    <Layout
-      header={
-        <Header
-          title={frontmatter.title}
-          subhead="Blog"
-          date={frontmatter.date}
-          tags={frontmatter.tags || []}
-        />
-      }
-    >
-      <article className="max-w-2xl text-lg mx-auto text-gray-800 leading-relaxed prose">
-        <div dangerouslySetInnerHTML={{ __html: html }} />
-      </article>
-    </Layout>
-  )
-}
+}: PageProps<any, PageContext>) => (
+  <Layout
+    header={<Header
+      title={frontmatter.title}
+      subhead="Blog"
+      date={frontmatter.date}
+      tags={frontmatter.tags || []} />}
+  >
+    <article className="max-w-2xl text-lg mx-auto text-gray-800 leading-relaxed prose">
+      <div dangerouslySetInnerHTML={{ __html: html }} />
+    </article>
+  </Layout>
+)
 
 export default BlogLayout
