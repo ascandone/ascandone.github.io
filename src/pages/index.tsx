@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import Layout from '../components/layout'
 import Header from '../components/index-header'
-import { GitHub, ArrowUpRight } from 'react-feather'
+import { GitHub, ArrowUpRight, Linkedin } from 'react-feather'
 import { link } from '../common-styles'
 
 const targetBlank = { target: '_blank', rel: 'noopener noreferrer' }
@@ -150,6 +150,13 @@ const Index: FC = () => (
           <li className="space-x-3 flex items-center mt-1">
             <a href="https://github.com/ascandone" {...targetBlank}>
               <GitHub className="h-5" />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/alessandro-scandone-035b241a2/"
+              {...targetBlank}
+            >
+              <Linkedin className="h-5" />
             </a>
 
             {/* <Linkedin className="h-5" />
