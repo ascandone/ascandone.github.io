@@ -1,3 +1,14 @@
+module Gatsby = {
+  module Link = {
+    @module("gatsby") @react.component
+    external make: (
+      ~children: React.element,
+      ~\"to": string,
+      ~className: string=?,
+    ) => React.element = "Link"
+  }
+}
+
 module Helmet = {
   @module("react-helmet") @react.component
   external make: (~children: React.element) => React.element = "default"

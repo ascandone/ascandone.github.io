@@ -1,12 +1,12 @@
 import React, { FC } from 'react'
-import Link from './link'
+import { make as Link} from './Link.gen'
 import { make as Chip } from '../components/Chip.gen'
 
 import { ArrowUpLeft, ArrowUpRight } from 'react-feather'
 
 const iconBackDark = (
   <span className="flex items-center">
-    <Link dark to="/">
+    <Link dark to_="/">
       <span className="font-semibold">Home</span>
     </Link>
     <ArrowUpRight className="h-5" />

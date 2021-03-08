@@ -2,6 +2,12 @@
 
 import * as BindingsGen from "./Bindings.gen";
 
+var Link = {};
+
+var Gatsby = {
+  Link: Link
+};
+
 var Helmet = {};
 
 var faInstagram = BindingsGen.faInstagram;
@@ -24,6 +30,7 @@ var Fontawesome = {
 };
 
 export {
+  Gatsby ,
   Helmet ,
   Fontawesome ,
   
