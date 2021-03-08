@@ -2,7 +2,7 @@ open React
 open Bindings
 
 @react.component
-export make = (~title, ~subhead, ~date=?, ~tags=[], ~description=?) => <>
+let make = (~title, ~subhead, ~date=?, ~tags=[], ~description=?) => <>
   <div className="text-4xl font-serif font-extrabold leading-tight antialiased">
     <h5 className="text-gray-500 "> {subhead->string} </h5>
     <h2 className="text-white"> {title->string} </h2>

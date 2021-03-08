@@ -1,5 +1,5 @@
 @react.component
-export make = (~children, ~dark=false) =>
+let make = (~children, ~dark=false) =>
   <span className={"rounded p-px bg-gradient-45 " ++ CommonStyles.gradient}>
     <span
       className={"rounded px-2 " ++ if dark {

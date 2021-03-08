@@ -1,4 +1,4 @@
-@react.component @genType
+@react.component
 let make = (~to_, ~children, ~dark=false) => {
   open Bindings
 

@@ -3,7 +3,7 @@
 open Bindings
 
 @react.component
-export make = (~header, ~children) =>
+let make = (~header, ~children) =>
   <div className="bg-darkest-gray antialiased">
     <Helmet>
       <meta name="theme-color" content="#121212" />
