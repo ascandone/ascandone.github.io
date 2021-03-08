@@ -1,5 +1,19 @@
 import React, { FC } from 'react'
 import { gradient } from '../common-styles'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faInstagram, faLinkedin, faGithub, IconDefinition } from '@fortawesome/free-brands-svg-icons'
+
+const LinkIcon: FC<{ icon: IconDefinition, href: string }> = (props) => (
+  <div className="cursor-pointer transition-colors duration-300 hover:bg-dark-gray flex h-12 w-12 items-center justify-center ">
+    <a href={props.href} rel="noopener noreferrer" target="__blank">
+      <FontAwesomeIcon
+        className="fill-current"
+        size="lg"
+        icon={props.icon}
+      />
+    </a>
+  </div>
+)
 
 const IndexHeader: FC = () => {
   const keywordClass =
@@ -26,6 +40,14 @@ const IndexHeader: FC = () => {
       <p className="mt-6 text-sm text-gray-200 font-light">
         *Also, I usually break them
       </p>
+
+      <div className="h-16"></div>
+
+      <div className="text-gray-200 flex space-x-4 -ml-4">
+        <LinkIcon href="www.example.com" icon={faLinkedin}/>
+        <LinkIcon href="www.example.com" icon={faGithub}/>
+        <LinkIcon href="www.example.com" icon={faInstagram}/>
+      </div>
     </div>
   )
 }

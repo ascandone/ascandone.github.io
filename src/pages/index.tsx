@@ -139,34 +139,6 @@ const Index: FC = () => (
           </li>
         </ul>
       </Section>
-      <Section head="Contact">
-        <ul>
-          <li>Alessandro Scandone</li>
-          <li>
-            <a className={link} href="mailto:alescandone@gmail.com">
-              alescandone@gmail.com
-            </a>
-          </li>
-          <li className="space-x-3 flex items-center mt-1">
-            <a href="https://github.com/ascandone" {...targetBlank}>
-              <GitHub className="h-5" />
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/alessandro-scandone-035b241a2/"
-              {...targetBlank}
-            >
-              <Linkedin className="h-5" />
-            </a>
-
-            {/* <Linkedin className="h-5" />
-
-            <Instagram className="h-5" /> */}
-            {/* HACK  */}
-            {/* <span className="text-transparent">.</span> */}
-          </li>
-        </ul>
-      </Section>
     </main>
   </Layout>
 )
