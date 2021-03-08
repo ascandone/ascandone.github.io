@@ -10,6 +10,8 @@ import {faGithub as faGithubNotChecked} from '@fortawesome/free-brands-svg-icons
 
 import {FontAwesomeIcon as FontAwesomeIconNotChecked} from '@fortawesome/react-fontawesome';
 
+import {ArrowUpRight as ArrowUpRightNotChecked} from 'react-feather';
+
 // In case of type error, check the type of 'faInstagram' in 'Bindings.re' and '@fortawesome/free-brands-svg-icons'.
 export const faInstagramTypeChecked: Fontawesome_iconDefinition = faInstagramNotChecked;
 
@@ -47,6 +49,12 @@ export const FontAwesomeIcon: unknown = FontAwesomeIconTypeChecked as React.Comp
   | "lg"
   | "10x"
 }>;
+
+// In case of type error, check the type of 'ArrowUpRight' in 'Bindings.re' and 'react-feather'.
+export const ArrowUpRightTypeChecked: React.ComponentType<{ readonly className?: string }> = ArrowUpRightNotChecked;
+
+// Export 'ArrowUpRight' early to allow circular import from the '.bs.js' file.
+export const ArrowUpRight: unknown = ArrowUpRightTypeChecked as React.ComponentType<{ readonly className?: string }>;
 
 import {IconDefinition as $$Fontawesome_iconDefinition} from '@fortawesome/free-brands-svg-icons';
 

@@ -18,9 +18,6 @@ module Fontawesome = {
   @genType.import("@fortawesome/free-brands-svg-icons") @genType.as("IconDefinition")
   type iconDefinition
 
-  // @genType.import("@fortawesome/fontawesome-svg-core") @genType.as("SizeProp")
-  // type sizeProp
-
   @genType.import("@fortawesome/free-brands-svg-icons")
   external faInstagram: iconDefinition = "faInstagram"
 
@@ -31,11 +28,20 @@ module Fontawesome = {
   external faGithub: iconDefinition = "faGithub"
 
   module FontAwesomeIcon = {
-    @genType.import("@fortawesome/react-fontawesome") @react.component
+    @react.component @genType.import("@fortawesome/react-fontawesome")
     external make: (
       ~className: string=?,
       ~icon: iconDefinition,
       ~size: [#xs | #lg | #"10x"]=?,
     ) => React.element = "FontAwesomeIcon"
+  }
+}
+
+module Feather = {
+  type t = (~color: string=?, ~size: int=?, ~className: string=?) => React.element
+
+  module ArrowUpRight = {
+    @react.component @genType.import("react-feather")
+    external make: (~className: string=?) => React.element = "ArrowUpRight"
   }
 }

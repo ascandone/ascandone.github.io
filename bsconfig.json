@@ -31,7 +31,8 @@
 		"react-jsx": 3
 	},
 	"bs-dependencies": [
-		"@rescript/react"
+		"@rescript/react",
+		"@glennsl/bs-json"
 	],
 	"ppx-flags": [],
 	"refmt": 3

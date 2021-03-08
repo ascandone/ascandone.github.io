@@ -29,10 +29,21 @@ var Fontawesome = {
   FontAwesomeIcon: FontAwesomeIcon
 };
 
+var make$1 = BindingsGen.ArrowUpRight;
+
+var ArrowUpRight = {
+  make: make$1
+};
+
+var Feather = {
+  ArrowUpRight: ArrowUpRight
+};
+
 export {
   Gatsby ,
   Helmet ,
   Fontawesome ,
+  Feather ,
   
 }
 /* faInstagram Not a pure module */

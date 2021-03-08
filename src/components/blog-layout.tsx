@@ -1,16 +1,10 @@
 import React, { FC, Children } from 'react'
 import { make as Layout } from '../components/Layout.gen'
-import Header from './layout-article-header'
+import { make as Header} from './LayoutArticleHeader.gen'
 import Highlight, { Prism, Language, defaultProps } from 'prism-react-renderer'
 import './highlight.css'
 import './prose.css'
 import { PageProps } from 'gatsby'
-
-// TODO: rest
-
-const inlineCode: FC = (p) => (
-  <code className="bg-cool-gray-100 rounded px-px -mx-px" {...p} />
-)
 
 // TODO: type safe serializer
 interface PostMetadata {
