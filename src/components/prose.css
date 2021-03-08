@@ -1,5 +1,4 @@
 /* Prose */
-
 .prose :first-child {
   margin-top: 0;
 }
@@ -78,3 +77,11 @@
 .prose a {
 	@apply transition-all duration-200;
 }
+
+.prose code {
+	@apply bg-darkest-gray text-gray-100 rounded;
+}
+
+/* .prose p, .prose ul, .prose ol {
+	@apply max-w-lg;
+} */

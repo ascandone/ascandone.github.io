@@ -39,6 +39,7 @@
   background-size: 100% 25%;
 }
 
+.prose a,
 .underline-gradient {
   background-position: 0.1em 88%;
   --color: theme('colors.cool-gray.200');
@@ -47,6 +48,7 @@
   background-size: 100% 25%;
 }
 
+.prose a:hover,
 .underline-gradient:hover {
   @apply text-gray-900;
   background-size: 100% 50%;
