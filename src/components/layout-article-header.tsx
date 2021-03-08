@@ -4,7 +4,7 @@ import { make as Chip } from '../components/Chip.gen'
 
 import { ArrowUpLeft, ArrowUpRight } from 'react-feather'
 
-const iconBackDark p= (
+const iconBackDark = (
   <span className="flex items-center">
     <Link dark to="/">
       <span className="font-semibold">Home</span>
