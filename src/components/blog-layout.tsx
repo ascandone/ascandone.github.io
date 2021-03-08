@@ -1,5 +1,5 @@
 import React, { FC, Children } from 'react'
-import Layout from '../components/layout'
+import { make as Layout } from '../components/Layout.gen'
 import Header from './layout-article-header'
 import Highlight, { Prism, Language, defaultProps } from 'prism-react-renderer'
 import './highlight.css'

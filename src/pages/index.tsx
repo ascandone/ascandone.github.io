@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import Layout from '../components/layout'
+import { make as Layout } from '../components/Layout.gen'
 import Header from '../components/index-header'
 import { GitHub, ArrowUpRight, Linkedin } from 'react-feather'
 import { link } from '../common-styles'
