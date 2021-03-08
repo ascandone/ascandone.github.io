@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import Layout from '../components/layout'
 import IndexHeader from '../components/index-header'
-import Chip from '../components/chip'
+import {make as Chip} from '../components/Chip.gen'
 
 interface ArticleArgs {}
 const _Article: FC<ArticleArgs> = () => (

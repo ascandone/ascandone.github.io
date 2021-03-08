@@ -5,7 +5,8 @@ import * as CommonStyles$GatsbyStarterHelloWorld from "./CommonStyles.bs.js";
 
 function Chip(Props) {
   var children = Props.children;
-  var dark = Props.dark;
+  var darkOpt = Props.dark;
+  var dark = darkOpt !== undefined ? darkOpt : false;
   return React.createElement("span", {
               className: "rounded p-px bg-gradient-45 " + CommonStyles$GatsbyStarterHelloWorld.gradient
             }, React.createElement("span", {

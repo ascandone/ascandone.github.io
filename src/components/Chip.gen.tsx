@@ -8,6 +8,6 @@ import * as React from 'react';
 const ChipBS = require('./Chip.bs');
 
 // tslint:disable-next-line:interface-over-type-literal
-export type Props = { readonly children: React.ReactNode; readonly dark: boolean };
+export type Props = { readonly children: React.ReactNode; readonly dark?: boolean };
 
-export const make: React.ComponentType<{ readonly children: React.ReactNode; readonly dark: boolean }> = ChipBS.make;
+export const make: React.ComponentType<{ readonly children: React.ReactNode; readonly dark?: boolean }> = ChipBS.make;
