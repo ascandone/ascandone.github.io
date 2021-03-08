@@ -44,9 +44,9 @@ const IndexHeader: FC = () => {
       <div className="h-16"></div>
 
       <div className="text-gray-200 flex space-x-4 -ml-4">
-        <LinkIcon href="www.example.com" icon={faLinkedin}/>
-        <LinkIcon href="www.example.com" icon={faGithub}/>
-        <LinkIcon href="www.example.com" icon={faInstagram}/>
+        <LinkIcon href="https://www.linkedin.com/in/alessandro-scandone-035b241a2/" icon={faLinkedin}/>
+        <LinkIcon href="https://github.com/ascandone" icon={faGithub}/>
+        <LinkIcon href="https://www.instagram.com/alescandone/" icon={faInstagram}/>
       </div>
     </div>
   )
