@@ -13,7 +13,7 @@ type pageContext = {
 }
 
 @react.component
-export make = (~pageContext as {html, frontmatter}) =>
+let make = (~pageContext as {html, frontmatter}) =>
   <Layout
     header={<LayoutArticleHeader
       title=frontmatter.title
