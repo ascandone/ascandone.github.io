@@ -11,7 +11,7 @@ import './highlight.css'
 import './prose.css'
 ;
 
-function BlogLayout(Props) {
+function BlogLayout$default(Props) {
   var param = Props.pageContext;
   var frontmatter = param.frontmatter;
   return React.createElement(Layout$GatsbyStarterHelloWorld.make, {
@@ -31,10 +31,11 @@ function BlogLayout(Props) {
             });
 }
 
-var make = BlogLayout;
+var $$default = BlogLayout$default;
 
 export {
-  make ,
+  $$default ,
+  $$default as default,
   
 }
 /*  Not a pure module */

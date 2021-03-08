@@ -13,7 +13,7 @@ type pageContext = {
 }
 
 @react.component
-let make = (~pageContext as {html, frontmatter}) =>
+let default = (~pageContext as {html, frontmatter}) =>
   <Layout
     header={<LayoutArticleHeader
       title=frontmatter.title

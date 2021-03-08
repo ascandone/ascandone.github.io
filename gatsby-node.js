@@ -58,7 +58,7 @@ exports.createPages = async ({
       switch (sourceInstanceName) {
         case 'blog':
           createPage({
-            component: require.resolve(`./src/components/blog-layout.js`),
+            component: require.resolve(`./src/components/BlogLayout.bs`),
             path: `/blog${slug}`,
             context: { frontmatter, html },
           })
