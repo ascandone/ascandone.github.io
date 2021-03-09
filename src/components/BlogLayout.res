@@ -1,27 +1,33 @@
 %%raw(`import './highlight.css'`)
 %%raw(`import './prose.css'`)
 
-type frontmatter = {
+type metadata = {
   title: string,
   date: string,
-  tags: option<array<string>>,
+  tags: array<string>,
 }
 
-type pageContext = {
-  html: string,
-  frontmatter: frontmatter,
+module Decode = {
+  open Json.Decode
+
+  let metadata = js => {
+    title: js |> field("title", string),
+    date: js |> field("date", string),
+    tags: js |> withDefault([], field("tags", array(string))),
+  }
 }
 
 @react.component
-let default = (~pageContext as {html, frontmatter}) =>
-  <Layout
-    header={<LayoutArticleHeader
-      title=frontmatter.title
-      subhead="Blog"
-      date=frontmatter.date
-      tags={frontmatter.tags->Belt.Option.getWithDefault([])}
-    />}>
+let make = (~children, ~metadata) => {
+  let metadata = Decode.metadata(metadata)
+  let header =
+    <LayoutArticleHeader
+      title=metadata.title subhead="Blog" date=metadata.date tags=metadata.tags
+    />
+
+  <Layout header>
     <article className="max-w-2xl text-lg mx-auto text-gray-800 leading-relaxed prose">
-      <div dangerouslySetInnerHTML={{"__html": html}} />
+      <div> children </div>
     </article>
   </Layout>
+}
