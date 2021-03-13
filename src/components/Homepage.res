@@ -64,7 +64,7 @@ module ProjectsSection = {
         </li>
         <li>
           <a className=CommonStyles.link href="https://lambda-calculus-interpreter.netlify.app">
-            {"online λ-calculus interpreter"->string}
+            {`online λ-calculus interpreter`->string}
           </a>
         </li>
         <li>

@@ -136,7 +136,7 @@ function Homepage$ProjectsSection(Props) {
                           }, "studiodentisticoandreinafraioli.it")), React.createElement("li", undefined, React.createElement("a", {
                             className: CommonStyles$GatsbyStarterHelloWorld.link,
                             href: "https://lambda-calculus-interpreter.netlify.app"
-                          }, "online \xce\xbb-calculus interpreter")), React.createElement("li", undefined, React.createElement("span", {
+                          }, "online λ-calculus interpreter")), React.createElement("li", undefined, React.createElement("span", {
                             className: "text-gray-400 font-semibold"
                           }, "more coming soon..."))),
               head: "Projects"
