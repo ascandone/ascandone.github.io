@@ -1,5 +1,9 @@
+# Rescript
 .bsb.lock
 lib/
+.merlin
+**/*.bs.js
+**/*.gen.tsx
 
 #Temp
 blog/
