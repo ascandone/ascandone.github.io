@@ -6,7 +6,7 @@ const generateGradients = (step) =>
   Object.fromEntries(
     Array.from({ length: 360 / step }, (_, i) => i * step).map((n) => [
       `gradient-${n}`,
-      `linear-gradient(${n}deg, var(--gradient-color-stops))`,
+      `linear-gradient(${n}deg, var(--tw-gradient-stops))`,
     ]),
   )
 

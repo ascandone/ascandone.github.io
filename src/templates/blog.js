@@ -1,1 +1,3 @@
-export { make as default } from '../components/BlogLayout.bs'
+import { make } from '../components/BlogLayout.bs'
+
+export default make

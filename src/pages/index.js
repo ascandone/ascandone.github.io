@@ -1,1 +1,3 @@
-export { make as default } from '../components/Homepage.bs'
+import { make } from '../components/Homepage.bs'
+
+export default make
