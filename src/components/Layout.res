@@ -1,6 +1,7 @@
 %%raw(`import './layout.css'`)
 
 open Bindings
+open React
 
 @react.component
 let make = (~header, ~children) =>
@@ -11,7 +12,7 @@ let make = (~header, ~children) =>
         href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,400;1,700&display=swap"
         rel="stylesheet"
       />
-      <title> {React.string("Alessandro Scandone :: Dev")} </title>
+      <title> {"Alessandro Scandone :: Dev"->string} </title>
     </Helmet>
     <div className="flex flex-col md:flex-row">
       <header className="md:flex-1 py-16 flex sm:justify-center items-center md:h-screen">
@@ -19,7 +20,7 @@ let make = (~header, ~children) =>
       </header>
       <main
         className="min-w-0 rounded-t-lg md:rounded-none flex-1 py-8 bg-white md:flex min-h-screen">
-        <div className="max-w-full px-5 lg:px-8 xl:px-16"> {children} </div>
+        <div className="max-w-full px-5 lg:px-8 xl:px-16" > {children} </div>
       </main>
     </div>
   </div>

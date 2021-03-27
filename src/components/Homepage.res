@@ -4,7 +4,7 @@ module Section = {
   @react.component
   let make = (~children, ~head) =>
     <article>
-      <h2 className="text-black font-bold mb-2"> {React.string(head)} </h2>
+      <h2 className="text-black font-bold mb-2"> {head->string} </h2>
       <div className="text-gray-600"> {children} </div>
     </article>
 }
@@ -39,7 +39,7 @@ module ToolsSection = {
       {categories->Belt.List.reduceWithIndex(<> </>, (acc, {label, children}, index) => <>
         acc
         {if index == 0 {
-          React.null
+          null
         } else {
           string(` • `)
         }}

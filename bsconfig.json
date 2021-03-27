@@ -34,6 +34,5 @@
 		"@rescript/react",
 		"@glennsl/bs-json"
 	],
-	"ppx-flags": [],
-	"refmt": 3
+	"ppx-flags": []
 }
