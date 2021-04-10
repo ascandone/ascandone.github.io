@@ -24,11 +24,12 @@
 }
 
 .animate-gradient-a {
-  animation-duration: 18s;
+  animation-duration: 12s;
 }
 
 .animate-gradient-b {
-  animation-duration: 12s;
+  animation-duration: 8s;
+  animation-delay: -3s;
 }
 
 .underline-gradient-dark {
