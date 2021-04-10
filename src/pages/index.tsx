@@ -37,19 +37,19 @@ const categories = [
   },
   {
     label: 'design',
-    children: ['framer', 'adobe xd'],
+    children: ['framer', 'figma'],
   },
   {
     label: 'langs',
-    children: ['typescript', 'reasonml', 'haskell', 'clojure'],
+    children: ['typescript', 'rescript', 'haskell', 'clojure'],
   },
   {
     label: 'build tools',
-    children: ['gatsby', 'parcel', 'snowpack'],
+    children: ['gatsby', 'next', 'vite'],
   },
   {
-    label: 'state management',
-    children: ['redux'],
+    label: 'misc',
+    children: ['redux', 'rxjs'],
   },
   {
     label: 'coding style',
@@ -114,6 +114,24 @@ const Index: FC = () => (
       </Section>
       <Section head="Projects">
         <ul>
+        <li>
+            <a
+              className={link}
+              href="https://lambda-calculus-interpreter.netlify.app"
+              {...targetBlank}
+            >
+              online λ-calculus interpreter
+            </a>
+          </li>
+          <li>
+            <a
+              className={link}
+              href="https://academy.vertigo.exchange"
+              {...targetBlank}
+            >
+              Vertigo academy
+            </a>
+          </li>
           <li>
             <a
               className={link}
@@ -121,15 +139,6 @@ const Index: FC = () => (
               {...targetBlank}
             >
               studiodentisticoandreinafraioli.it
-            </a>
-          </li>
-          <li>
-            <a
-              className={link}
-              href="https://lambda-calculus-interpreter.netlify.app"
-              {...targetBlank}
-            >
-              online λ-calculus interpreter
             </a>
           </li>
           <li>
